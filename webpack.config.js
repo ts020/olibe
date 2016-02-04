@@ -9,7 +9,7 @@ module.exports = {
     path: './',
     filename: "[name].js",
     library: ["olibe"],
-    libraryTarget: "commonjs"
+    libraryTarget: "umd"
   },
   resolveLoader: {
     root: path.join(__dirname, 'node_modules'),
