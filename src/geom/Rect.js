@@ -1,4 +1,4 @@
-export default class Rect{
+export class Rect{
     constructor(left,top,right,bottom) {
         this.left = left || 0;
         this.top = top || 0;
