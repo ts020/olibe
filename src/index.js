@@ -3,17 +3,8 @@ module.exports = {
     Observer : require("./Observer.js"),
     QueLoader : require("./QueLoader.js"),
     VisitManager : require("./QueLoader.js"),
-
-    geom : {
-        Rect : require("./geom/Rect.js")
-    },
-
-    svg : {
-        Path : require("./svg/Path.js")
-    },
-
-    util : {
-        ArrayUtil : require("./util/ArrayUtil.js")
-    }
+    Rect : require("./geom/Rect.js"),
+    SVGPath : require("./svg/Path.js"),
+    ArrayUtil : require("./util/ArrayUtil.js")
 };
 

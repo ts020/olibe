@@ -61,18 +61,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Observer: __webpack_require__(51),
 	    QueLoader: __webpack_require__(52),
 	    VisitManager: __webpack_require__(52),
-
-	    geom: {
-	        Rect: __webpack_require__(56)
-	    },
-
-	    svg: {
-	        Path: __webpack_require__(57)
-	    },
-
-	    util: {
-	        ArrayUtil: __webpack_require__(58)
-	    }
+	    Rect: __webpack_require__(56),
+	    SVGPath: __webpack_require__(57),
+	    ArrayUtil: __webpack_require__(58)
 	};
 
 /***/ },
