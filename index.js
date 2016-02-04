@@ -56,15 +56,35 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	module.exports = {
-	    Frame: __webpack_require__(1),
-	    Observer: __webpack_require__(51),
-	    QueLoader: __webpack_require__(52),
-	    VisitManager: __webpack_require__(52),
-	    Rect: __webpack_require__(56),
-	    SVGPath: __webpack_require__(57),
-	    ArrayUtil: __webpack_require__(58)
-	};
+	var _Frame = __webpack_require__(1);
+
+	var _Frame2 = _interopRequireDefault(_Frame);
+
+	var _Observer = __webpack_require__(51);
+
+	var _Observer2 = _interopRequireDefault(_Observer);
+
+	var _QueLoader = __webpack_require__(52);
+
+	var _QueLoader2 = _interopRequireDefault(_QueLoader);
+
+	var _VisitManager = __webpack_require__(56);
+
+	var _VisitManager2 = _interopRequireDefault(_VisitManager);
+
+	var _Rect = __webpack_require__(59);
+
+	var _Rect2 = _interopRequireDefault(_Rect);
+
+	var _Path = __webpack_require__(60);
+
+	var _Path2 = _interopRequireDefault(_Path);
+
+	var _ArrayUtil = __webpack_require__(61);
+
+	var _ArrayUtil2 = _interopRequireDefault(_ArrayUtil);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
 /* 1 */
@@ -2717,6 +2737,82 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
+	var _stringify = __webpack_require__(57);
+
+	var _stringify2 = _interopRequireDefault(_stringify);
+
+	var _classCallCheck2 = __webpack_require__(14);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(41);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var VisitManager = function () {
+		function VisitManager() {
+			(0, _classCallCheck3.default)(this, VisitManager);
+		}
+
+		(0, _createClass3.default)(VisitManager, [{
+			key: "clear",
+			value: function clear() {
+				window.localStorage.removeItem("vui_visit");
+			}
+		}], [{
+			key: "isVisit",
+			value: function isVisit() {
+				return this.getVisitAll()[location.pathname] == true;
+			}
+		}, {
+			key: "getVisitAll",
+			value: function getVisitAll() {
+				var str = window.localStorage.getItem("vui_visit");
+				if (str) {
+					return JSON.parse(str);
+				}
+				return {};
+			}
+		}, {
+			key: "visit",
+			value: function visit() {
+				var item = this.getVisitAll();
+				item[location.pathname] = true;
+				window.localStorage.setItem("vui_visit", (0, _stringify2.default)(item));
+			}
+		}]);
+		return VisitManager;
+	}();
+
+	exports.default = VisitManager;
+
+/***/ },
+/* 57 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(58), __esModule: true };
+
+/***/ },
+/* 58 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var core = __webpack_require__(10);
+	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	  return (core.JSON && core.JSON.stringify || JSON.stringify).apply(JSON, arguments);
+	};
+
+/***/ },
+/* 59 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
 	var _classCallCheck2 = __webpack_require__(14);
 
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
@@ -2805,7 +2901,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 /***/ },
-/* 57 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2849,7 +2945,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Path;
 
 /***/ },
-/* 58 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

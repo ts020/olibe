@@ -1,10 +1,8 @@
-module.exports = {
-    Frame : require("./Frame.js"),
-    Observer : require("./Observer.js"),
-    QueLoader : require("./QueLoader.js"),
-    VisitManager : require("./QueLoader.js"),
-    Rect : require("./geom/Rect.js"),
-    SVGPath : require("./svg/Path.js"),
-    ArrayUtil : require("./util/ArrayUtil.js")
-};
+import Frame from "./Frame.js"
+import Observer from "./Observer.js"
+import QueLoader from "./QueLoader.js"
+import VisitManager from "./VisitManager.js"
+import Rect from "./geom/Rect.js"
+import SVGPath from "./svg/Path.js"
+import ArrayUtil from "./util/ArrayUtil.js"
 
