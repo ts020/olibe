@@ -56,6 +56,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _Frame = __webpack_require__(1);
 
 	var _Frame2 = _interopRequireDefault(_Frame);
@@ -85,6 +89,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _ArrayUtil2 = _interopRequireDefault(_ArrayUtil);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	    Frame: _Frame2.default,
+	    Obsever: Obsever,
+	    VisitManager: _VisitManager2.default,
+	    Rect: _Rect2.default,
+	    SVGPath: _Path2.default,
+	    ArrayUtil: _ArrayUtil2.default
+	};
 
 /***/ },
 /* 1 */

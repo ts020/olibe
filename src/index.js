@@ -6,3 +6,11 @@ import Rect from "./geom/Rect.js"
 import SVGPath from "./svg/Path.js"
 import ArrayUtil from "./util/ArrayUtil.js"
 
+export default {
+    Frame,
+    Obsever,
+    VisitManager,
+    Rect,
+    SVGPath,
+    ArrayUtil
+}
