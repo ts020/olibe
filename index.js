@@ -2837,11 +2837,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.Rect = undefined;
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Rect = exports.Rect = function () {
+	var Rect = function () {
 	    function Rect(left, top, right, bottom) {
 	        (0, _classCallCheck3.default)(this, Rect);
 
@@ -2912,6 +2911,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }]);
 	    return Rect;
 	}();
+
+	exports.default = Rect;
 
 /***/ },
 /* 60 */
