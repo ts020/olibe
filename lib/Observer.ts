@@ -1,24 +1,26 @@
+export default class Observer {
 
-export default class Observer{
+    private listeners:any;
 
-    getListener(type) {
-        if(!this.listeners) {
-            this.listeners = {};
-        }
+    constructor() {
+        this.listeners = {};
+    }
+
+    protected getListener(type:string):Function[] {
         if(!this.listeners[type])this.listeners[type] = []
         return this.listeners[type];
     }
 
-    contain(type, handler) {
+    protected contain(type:string, handler:Function):boolean {
         return this.getListener(type).indexOf(handler) != -1;
     }
 
-    on(type, handler){
+    on(type:string, handler:Function):void {
         this.getListener(type).push(handler);
     }
 
-    off(type, handler) {
-        if(type && !handler) {
+    off(type:string, handler:Function = null):void {
+        if (!handler) {
             this.listeners[type] = [];
             return;
         }
@@ -36,11 +38,11 @@ export default class Observer{
         }
     }
 
-    allOff() {
+    allOff():void {
         this.listeners = {};
     }
 
-    trigger(type, data) {
+    trigger(type:string, data:any = null):void {
         var sender = {type: type, data: data};
         this.getListener(type).forEach(function (hanlder) {
             try {
@@ -51,11 +53,6 @@ export default class Observer{
                 }
             }
         });
-        this.calledTrigger(type, data);
-    }
-
-    calledTrigger(type, data) {
-
     }
 
 }

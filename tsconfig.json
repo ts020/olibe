@@ -1,0 +1,40 @@
+
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "rootDir": ".",
+    "sourceMap": false,
+    "declaration": false,
+    "listFiles": true,
+    "newLine": "LF",
+    "noEmitOnError": true,
+    "inlineSources": false
+  },
+  "filesGlob": [
+    "./**/*.ts",
+    "./**/*.tsx",
+    "!./**/*.d.ts",
+    "./typings/**/*.d.ts",
+    "!./example/**/*.ts",
+    "!./node_modules/**/*",
+    "./node_modules/typescript/lib/lib.es6.d.ts"
+  ],
+  "exclude": [],
+  "files": [
+    "./lib/Observer.ts",
+    "./lib/Frame.ts",
+    "./lib/QueLoader.ts",
+    "./lib/VisitManager.ts",
+    "./lib/geom/Point.ts",
+    "./lib/geom/Rect.ts",
+    "./lib/svg/Path.ts",
+    "./lib/util/ArrayUtil.ts",
+    "./lib/util/StringUtil.ts",
+    "./lib/util/Timer.ts",
+    "./typings/node/node.d.ts",
+    "./node_modules/typescript/lib/lib.es6.d.ts"
+  ]
+}

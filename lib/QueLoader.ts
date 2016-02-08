@@ -1,13 +1,19 @@
-var request = require("superagent");
 import Observer from "./Observer";
 import Frame from "./Frame"
 export default class QueLoader extends Observer {
+    private static _instatnce:QueLoader;
     static get instance() {
         if(!QueLoader._instatnce){
             QueLoader._instatnce = new QueLoader();
         }
         return QueLoader._instatnce;
     }
+
+
+    protected queList: LoadQue[];
+    protected queHash: any;
+    protected currentQue:LoadQue;
+    protected loadedHandler:Function;
 
     constructor() {
         super();
@@ -17,7 +23,7 @@ export default class QueLoader extends Observer {
         this.loadedHandler = this.loaded.bind(this);
     }
 
-    add(url, callback) {
+    add(url:string, callback:Function) {
         if(this.queHash[url]) {
             return;
         }
@@ -43,36 +49,33 @@ export default class QueLoader extends Observer {
         this.currentQue.load();
     }
 
-    loaded(e){
+    loaded(e:{type:string; data:any}){
         e.data.kill();
         this.next();
     }
 }
-
+declare var request:any;
 export class LoadQue extends Observer {
-
-    constructor(url, callBack) {
+    response:any;
+    constructor(public url:string, public callBack:Function) {
         super();
-        this.url = url;
-        this.callBack = callBack;
     }
 
     load() {
-        var _this = this;
-        request.get(this.url, function(err, res){
-            _this.response = res;
+        request.get(this.url, (err:any, res:any)=>{
+            this.response = res;
             if (err) {
-                _this.trigger("loaded", _this);
+                this.trigger("loaded", this);
                 console.error(err);
                 return;
             }
 
             if(res.body.length == 0) {
-                _this.trigger("loaded", _this);
+                this.trigger("loaded", this);
                 return;
             }
-            _this.callBack(res);
-            _this.trigger("loaded", _this);
+            this.callBack(res);
+            this.trigger("loaded", this);
         });
     }
 

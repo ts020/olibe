@@ -1,11 +1,12 @@
 export default class Path {
+    protected _source:string;
 
     constructor() {
-        this.source = "";
+        this._source = "";
     }
 
-    addRect(rect) {
-        this.source += "M"+rect.left+","+rect.top+
+    addRect(rect:{left:number; top:number; right:number; bottom:number;}):Path {
+        this._source += "M"+rect.left+","+rect.top+
             " L"+rect.right+"," +rect.top +
             " L"+rect.right+","+rect.bottom+
             " L"+rect.left +","+rect.bottom+
@@ -13,8 +14,7 @@ export default class Path {
         return this;
     }
 
-    getSource() {
-        return this.source;
+    get source():string {
+        return this._source;
     }
-
 }
