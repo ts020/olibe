@@ -12,11 +12,11 @@ export default class Timer extends Observer {
         if (!this.isPlaying) {
             this.count = 0;
             this.timerID = setInterval(()=> {
-                if (this.repeat > 0 && this.repeat <= this.count) {
+                this.count++;
+                if (this.repeat <= this.count) {
                     this.stop();
                     this.trigger("timerComplete");
                 }
-                this.count++;
                 this.trigger("timer");
             }, this.duration)
         }
@@ -30,4 +30,4 @@ export default class Timer extends Observer {
         this.pause();
         this.count = 0;
     }
-    }
+}

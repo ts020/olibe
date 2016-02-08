@@ -20,11 +20,11 @@ var Timer = (function (_super) {
         if (!this.isPlaying) {
             this.count = 0;
             this.timerID = setInterval(function () {
-                if (_this.repeat > 0 && _this.repeat <= _this.count) {
+                _this.count++;
+                if (_this.repeat <= _this.count) {
                     _this.stop();
                     _this.trigger("timerComplete");
                 }
-                _this.count++;
                 _this.trigger("timer");
             }, this.duration);
         }
