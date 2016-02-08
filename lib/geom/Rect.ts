@@ -15,11 +15,11 @@ export default class Rect {
     }
 
     get top():number {
-        return this.top + this.offset.y;
+        return this._top + this.offset.y;
     }
 
     get bottom():number {
-        return this.bottom + this.offset.y;
+        return this._bottom + this.offset.y;
     }
 
     get width():number {
@@ -27,7 +27,7 @@ export default class Rect {
     }
 
     get height():number {
-        return this.bottom - this.top + this.offset.y;
+        return this._bottom - this._top + this.offset.y;
     }
 
     get center():number {
