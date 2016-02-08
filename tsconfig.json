@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "rootDir": ".",
     "sourceMap": false,
-    "declaration": false,
+    "declaration": true,
     "listFiles": true,
     "newLine": "LF",
     "noEmitOnError": true,
