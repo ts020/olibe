@@ -1,5 +1,5 @@
 import Observer from "../Observer"
-export class Timer extends Observer {
+export default class Timer extends Observer {
     private timerID:number;
     private isPlaying:boolean = false;
     private count:number = 0;

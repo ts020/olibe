@@ -38,4 +38,5 @@ var Timer = (function (_super) {
     };
     return Timer;
 })(Observer_1.default);
-exports.Timer = Timer;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Timer;

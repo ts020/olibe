@@ -1,5 +1,5 @@
 import Observer from "../Observer";
-export declare class Timer extends Observer {
+export default class Timer extends Observer {
     duration: number;
     repeat: number;
     private timerID;
