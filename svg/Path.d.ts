@@ -1,35 +1,26 @@
 export default class Path {
     protected _source: string;
     protected pathMap: {
-        [key: string]: {
-            pathType: PathType;
-            param: any;
-        };
+        [key: string]: IPathParam;
     };
-    protected pathList: {
-        pathType: PathType;
-        param: any;
-    }[];
+    protected pathList: IPathParam[];
     constructor();
-    addRect(rect: {
-        left: number;
-        top: number;
-        right: number;
-        bottom: number;
-    }, id?: string): Path;
-    protected addPath(param: {
-        pathType: PathType;
-        param: any;
-    }, id?: string): void;
+    addRect(rect: IRect, id?: string): Path;
+    protected addPath(param: IPathParam, id?: string): void;
     contain(id: string): boolean;
     remove(id: string): void;
-    protected createRect(rect: {
-        left: number;
-        top: number;
-        right: number;
-        bottom: number;
-    }): string;
+    protected createRect(rect: IRect): string;
     source: string;
+}
+export interface IRect {
+    left: number;
+    right: number;
+    top: number;
+    bottom: number;
+}
+export interface IPathParam {
+    pathType: PathType;
+    param: any;
 }
 export declare enum PathType {
     rect = 0,

@@ -78,6 +78,9 @@ var Rect = (function () {
         var rect = dom.getBoundingClientRect();
         return new Rect(rect.left, rect.top, rect.right, rect.bottom);
     };
+    Rect.vueToGlobal = function (vueElement) {
+        return Rect.domToGlobal(vueElement.$el);
+    };
     Rect.buildToBoundRect = function (rect) {
         return new Rect(rect.left, rect.top, rect.right, rect.bottom);
     };

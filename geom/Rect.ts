@@ -57,6 +57,10 @@ export default class Rect {
         return new Rect(rect.left, rect.top, rect.right, rect.bottom);
     }
 
+    static vueToGlobal(vueElement:any):Rect {
+        return Rect.domToGlobal(vueElement.$el);
+    }
+
     static buildToBoundRect(rect:{left:number; top:number; right:number; bottom:number;}):Rect {
         return new Rect(rect.left, rect.top, rect.right, rect.bottom);
     }

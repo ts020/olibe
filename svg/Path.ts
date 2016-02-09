@@ -1,20 +1,20 @@
 import ArrayUtil from "../util/ArrayUtil"
 export default class Path {
     protected _source:string;
-    protected pathMap:{[key:string]:{pathType:PathType;param:any;}};
-    protected pathList:{pathType:PathType;param:any;}[];
+    protected pathMap:{[key:string]:IPathParam};
+    protected pathList:IPathParam[];
     constructor() {
         this._source = "";
         this.pathMap = {};
         this.pathList = [];
     }
 
-    addRect(rect:{left:number; top:number; right:number; bottom:number;}, id:string=null):Path {
+    addRect(rect:IRect, id:string=null):Path {
         this.addPath({param:rect, pathType:PathType.rect}, id);
         return this;
     }
 
-    protected addPath(param:{pathType:PathType;param:any;}, id:string=null):void {
+    protected addPath(param:IPathParam, id:string=null):void {
         if(this.contain(id)) {
             return;
         }
@@ -36,7 +36,7 @@ export default class Path {
         delete this.pathMap[id];
     }
 
-    protected createRect(rect:{left:number; top:number; right:number; bottom:number}) {
+    protected createRect(rect:IRect) {
         return "M"+rect.left+","+rect.top+
             " L"+rect.right+"," +rect.top +
             " L"+rect.right+","+rect.bottom+
@@ -56,6 +56,18 @@ export default class Path {
 
         return result;
     }
+}
+
+export interface IRect {
+    left:number;
+    right:number;
+    top:number;
+    bottom:number;
+}
+
+export interface IPathParam {
+    pathType:PathType;
+    param:any;
 }
 
 export enum PathType {

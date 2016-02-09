@@ -18,6 +18,7 @@ export default class Rect {
     clone(): Rect;
     static domToRelative(dom: HTMLElement): Rect;
     static domToGlobal(dom: HTMLElement): Rect;
+    static vueToGlobal(vueElement: any): Rect;
     static buildToBoundRect(rect: {
         left: number;
         top: number;
