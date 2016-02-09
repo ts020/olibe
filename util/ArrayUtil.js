@@ -4,10 +4,16 @@
 /**
  * Created by ts on 2016/01/25.
  */
-function without(array, item) {
-    if (item == null || array == null || array.indexOf(item) == -1) {
-        return;
+var ArrayUtil = (function () {
+    function ArrayUtil() {
     }
-    array.splice(array.indexOf(item), 1);
-}
-exports.without = without;
+    ArrayUtil.without = function (array, item) {
+        if (item == null || array == null || array.indexOf(item) == -1) {
+            return;
+        }
+        array.splice(array.indexOf(item), 1);
+    };
+    return ArrayUtil;
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ArrayUtil;

@@ -4,4 +4,6 @@
 /**
  * Created by ts on 2016/01/25.
  */
-export declare function without(array: any[], item: any): void;
+export default class ArrayUtil {
+    static without(array: any[], item: any): void;
+}
