@@ -1,5 +1,5 @@
 import ArrayUtil from "../util/ArrayUtil.ts"
-export class CalendarData {
+export default class CalendarData {
     constructor(public year:number=null, public month:number=null) {
         var date = new Date();
         this.year = this.year || date.getFullYear();
@@ -21,8 +21,4 @@ export class CalendarData {
         }
         return result;
     }
-}
-
-interface Week {
-    days:Date[];
 }

@@ -25,4 +25,5 @@ var CalendarData = (function () {
     };
     return CalendarData;
 })();
-exports.CalendarData = CalendarData;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = CalendarData;

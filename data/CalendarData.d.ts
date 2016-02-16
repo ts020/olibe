@@ -1,4 +1,4 @@
-export declare class CalendarData {
+export default class CalendarData {
     year: number;
     month: number;
     constructor(year?: number, month?: number);
