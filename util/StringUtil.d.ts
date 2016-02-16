@@ -1,2 +1,5 @@
-export declare function htmlEscape(str: string): string;
-export declare function htmlUnescape(value: string): string;
+export default class StringUtil {
+    static htmlEscape(str: string): string;
+    static htmlUnescape(value: string): string;
+    static addZero(num: number): string;
+}
