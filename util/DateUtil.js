@@ -9,7 +9,7 @@ var DateUtil = (function () {
         if (lang === void 0) { lang = "ja"; }
         return week[dayNumber];
     };
-    DateUtil.euqalDate = function (a, b) {
+    DateUtil.equalDate = function (a, b) {
         return Math.floor(a.getTime() / 6e4) == Math.floor(b.getTime() / 6e4);
     };
     return DateUtil;

@@ -7,7 +7,7 @@ export default class DateUtil {
         return week[dayNumber];
     }
 
-    static euqalDate(a:Date,b:Date):boolean {
+    static equalDate(a:Date,b:Date):boolean {
         return Math.floor(a.getTime() / 6e4) == Math.floor(b.getTime() / 6e4);
     }
 }
