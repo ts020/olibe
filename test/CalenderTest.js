@@ -1,4 +1,3 @@
-// test/test.js
 var should = require('should');
 var CalendarData = require('../data/CalendarData').default;
 
