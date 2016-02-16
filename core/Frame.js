@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Observer_1 = require("./Observer.d");
+var Observer_1 = require("./Observer");
 var Frame = (function (_super) {
     __extends(Frame, _super);
     function Frame() {

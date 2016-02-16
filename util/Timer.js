@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Observer_1 = require("../Observer");
+var Observer_1 = require("../core/Observer");
 var Timer = (function (_super) {
     __extends(Timer, _super);
     function Timer(duration, repeat) {
