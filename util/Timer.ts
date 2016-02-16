@@ -1,4 +1,4 @@
-import Observer from "../Observer"
+import Observer from "../core/Observer"
 export default class Timer extends Observer {
     private timerID:number;
     private isPlaying:boolean = false;

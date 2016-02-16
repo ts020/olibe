@@ -1,4 +1,4 @@
-import Observer from "./Observer";
+import Observer from "./../core/Observer";
 export default class QueLoader extends Observer {
     private static _instatnce;
     static instance: QueLoader;

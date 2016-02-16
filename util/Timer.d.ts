@@ -1,4 +1,4 @@
-import Observer from "../Observer";
+import Observer from "../core/Observer";
 export default class Timer extends Observer {
     duration: number;
     repeat: number;

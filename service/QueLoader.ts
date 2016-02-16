@@ -1,5 +1,5 @@
-import Observer from "./Observer";
-import Frame from "./Frame"
+import Observer from "./../core/Observer";
+import Frame from "./../core/Frame"
 export default class QueLoader extends Observer {
     private static _instatnce:QueLoader;
     static get instance() {
