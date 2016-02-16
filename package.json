@@ -8,8 +8,10 @@
     "url": "git@github.com:ts020/olibe.git"
   },
   "devDependencies": {
+    "mocha": "^2.4.5",
+    "should": "^8.2.2",
     "typescript": "^1.7.5"
   },
   "dependencies": {},
-  "license" : "MIT"
+  "license": "MIT"
 }
