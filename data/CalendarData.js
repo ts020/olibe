@@ -16,7 +16,7 @@ var CalendarData = (function () {
             var d = new Date(this.year, this.month, i);
             var day = d.getDay();
             week[d.getDay()] = d;
-            if (day == 6) {
+            if (day == 0 || result.length == 0) {
                 result.push(week);
                 week = [];
             }
