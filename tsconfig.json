@@ -35,8 +35,6 @@
     "util/StringUtil.ts",
     "util/Timer.ts",
     "util/DateUtil.ts",
-    "data/CalendarData.ts",
-    "./typings/node/node.d.ts",
-    "./node_modules/typescript/lib/lib.es6.d.ts"
+    "data/CalendarData.ts"
   ]
 }
