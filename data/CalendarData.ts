@@ -17,7 +17,7 @@ export default class CalendarData {
             week[d.getDay()] = d;
             if(day == 0 || result.length == 0) {
                 result.push(week);
-                week = [];
+                week = [null, null, null, null, null, null, null];
             }
         }
         return result;
