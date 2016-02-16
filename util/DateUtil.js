@@ -10,7 +10,9 @@ var DateUtil = (function () {
         return week[dayNumber];
     };
     DateUtil.equalDate = function (a, b) {
-        return Math.floor(a.getTime() / 6e4) == Math.floor(b.getTime() / 6e4);
+        return (a.getFullYear() == b.getFullYear() &&
+            a.getMonth() == b.getMonth() &&
+            a.getDate() == b.getDate());
     };
     return DateUtil;
 })();

@@ -8,6 +8,8 @@ export default class DateUtil {
     }
 
     static equalDate(a:Date,b:Date):boolean {
-        return Math.floor(a.getTime() / 6e4) == Math.floor(b.getTime() / 6e4);
+        return (a.getFullYear() == b.getFullYear()&&
+        a.getMonth() == b.getMonth() &&
+        a.getDate() == b.getDate());
     }
 }

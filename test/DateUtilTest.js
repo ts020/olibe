@@ -4,8 +4,8 @@ var DateUtil = require('../util/DateUtil').default;
 describe('DateUtilTest', function () {
 
     it("equalDate 同じ日、違う時間", function(){
-        DateUtil.equalDate(new Date(2016,2,15), new Date(2016,2,15, 10,10))
-        .should.equal(false);
+        DateUtil.equalDate(new Date("2016/2/16 00:00:00"), new Date("2016/2/16 18:06:18"))
+        .should.equal(true);
     });
 
     it("equalDate 同じ日、同じ時間", function(){
