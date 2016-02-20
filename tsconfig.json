@@ -30,6 +30,7 @@
     "./util/VisitManager.ts",
     "geom/Point.ts",
     "geom/Rect.ts",
+    "geom/Scale.ts",
     "svg/Path.ts",
     "util/ArrayUtil.ts",
     "util/StringUtil.ts",
