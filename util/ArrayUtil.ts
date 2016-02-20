@@ -10,11 +10,11 @@ export default class ArrayUtil {
         var result:any[] = [];
         if(key) {
             array.forEach((d)=>{
-                result.concat(d[key]);
+                result = result.concat(d[key]);
             })
         }else {
             array.forEach((d)=>{
-                result.concat(d);
+                result = result.concat(d);
             })
         }
         return result;

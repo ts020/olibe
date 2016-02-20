@@ -8,6 +8,7 @@ describe('ArrayUtilTest', function () {
         result.forEach(function(d, index){
             d.should.equal(index+1);
         });
+        result[5].should.equal(6);
     });
 
     it("flatten property", function(){
@@ -16,5 +17,6 @@ describe('ArrayUtilTest', function () {
         result.forEach(function(d, index){
             d.should.equal(index+1);
         });
+        result[5].should.equal(6);
     });
 });

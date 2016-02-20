@@ -1,9 +1,3 @@
-/**
- * Created by sugawaratakanori on 2016/02/08.
- */
-/**
- * Created by ts on 2016/01/25.
- */
 var ArrayUtil = (function () {
     function ArrayUtil() {
     }
@@ -18,12 +12,12 @@ var ArrayUtil = (function () {
         var result = [];
         if (key) {
             array.forEach(function (d) {
-                result.concat(d[key]);
+                result = result.concat(d[key]);
             });
         }
         else {
             array.forEach(function (d) {
-                result.concat(d);
+                result = result.concat(d);
             });
         }
         return result;
