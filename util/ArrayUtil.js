@@ -13,6 +13,21 @@ var ArrayUtil = (function () {
         }
         array.splice(array.indexOf(item), 1);
     };
+    ArrayUtil.flatten = function (array, key) {
+        if (key === void 0) { key = null; }
+        var result = [];
+        if (key) {
+            array.forEach(function (d) {
+                result.concat(d[key]);
+            });
+        }
+        else {
+            array.forEach(function (d) {
+                result.concat(d);
+            });
+        }
+        return result;
+    };
     return ArrayUtil;
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
