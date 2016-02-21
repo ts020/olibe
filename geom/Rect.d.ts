@@ -15,6 +15,7 @@ export default class Rect {
     center: number;
     middle: number;
     setSize(width: number, height: number): Rect;
+    hitTest(rect: Rect): boolean;
     clone(): Rect;
     static domToRelative(dom: HTMLElement): Rect;
     static domToGlobal(dom: HTMLElement): Rect;

@@ -44,6 +44,20 @@ export default class Rect {
         return this;
     }
 
+    hitTest(rect:Rect):boolean {
+        var checkX:boolean = false,checkY:boolean = false;
+
+        if((this.left >= rect.left) && ((this.width+rect.width) >= this.left))
+            checkX = true;
+        else if((rect.left >= this.left) && ((this.right) >= rect.left))
+            checkX = true;
+        if((this.top >= rect.top) && ((rect.top+rect.height) >= this.top))
+            checkY = true;
+        else if((rect.top >= this.top) && ((this.bottom) >= rect.top))
+            checkY = true;
+        return (checkX && checkY);
+    }
+
     clone():Rect {
         return new Rect(this._left, this._top, this._right, this._bottom);
     }

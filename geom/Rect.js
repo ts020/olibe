@@ -68,6 +68,18 @@ var Rect = (function () {
         this._bottom = this._bottom + (height - this.height);
         return this;
     };
+    Rect.prototype.hitTest = function (rect) {
+        var checkX = false, checkY = false;
+        if ((this.left >= rect.left) && ((this.width + rect.width) >= this.left))
+            checkX = true;
+        else if ((rect.left >= this.left) && ((this.right) >= rect.left))
+            checkX = true;
+        if ((this.top >= rect.top) && ((rect.top + rect.height) >= this.top))
+            checkY = true;
+        else if ((rect.top >= this.top) && ((this.bottom) >= rect.top))
+            checkY = true;
+        return (checkX && checkY);
+    };
     Rect.prototype.clone = function () {
         return new Rect(this._left, this._top, this._right, this._bottom);
     };
